@@ -7,11 +7,7 @@ const app = express()
 const port = 3000
 dbConnection()
 
-app.use(cors({
-    origin: 'http://localhost:5173', // or your frontend port
-    credentials: true,
-}));
-
+app.use(cors());
 app.use(express.json())
 app.use(route)
 

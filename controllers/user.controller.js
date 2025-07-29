@@ -74,4 +74,17 @@ async function login(req, res) {
         });
     }
 }
-module.exports = { userCtrl, login }
+
+async function allUserListsCtrl(req, res) {
+    try {
+        const allusers = await userSchema.find({})
+        res.status(200).json({
+            message: "get all users",
+            statues: "success",
+            data: allusers
+        })
+    } catch (error) {
+        res.status(400).json({ error: "internal server error", statues: "failed" })
+    }
+}
+module.exports = { userCtrl, login, allUserListsCtrl }
