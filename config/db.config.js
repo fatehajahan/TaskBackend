@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 function dbConnection (){
-mongoose.connect("mongodb+srv://fateha:fatehajahan@cluster0.liaz7.mongodb.net/mernTask?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+mongoose.connect(`${process.env.DB_URL}`).then(()=>{
     console.log('db connected')
 })
 }
