@@ -55,7 +55,7 @@ async function login(req, res) {
             return res.status(401).json({ message: 'Invalid email or password' })
         }
 
-        // SUCCESS
+        
         res.status(200).json({
             message: 'Login successful!',
             status: 'success',
